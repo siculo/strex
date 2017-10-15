@@ -1,2 +1,4 @@
 # strex
-A streaming regexp parser
+A streaming regex parser
+
+It's in a very early stage of development

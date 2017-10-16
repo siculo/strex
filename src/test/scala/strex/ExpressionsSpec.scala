@@ -3,6 +3,7 @@ package strex
 import org.scalatest._
 
 import strex.Expression._
+import strex.Evaluator._
 
 class ExpressionsSpec extends FlatSpec with Matchers {
   "matcher" should "not find some text" in {
@@ -90,6 +91,7 @@ class ExpressionsSpec extends FlatSpec with Matchers {
     (expression firstIn "hasd 3231 & 33 & 21 hasjdah").text shouldBe "3231 & 33 & 21"
   }
 
+  // fixme remove. Regex support will be added later.
   it should "find a regex match" in {
     (regExpr("\\d+((\\s+)?&(\\s+)?\\d+)*") firstIn "hasd 3231 & 33 & 21 hasjdah").text shouldBe "3231 & 33 & 21"
   }

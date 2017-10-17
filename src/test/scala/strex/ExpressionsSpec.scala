@@ -101,7 +101,8 @@ class ExpressionsSpec extends FlatSpec with Matchers {
   }
 
   it should "find some words" in {
-    val found = (letter followedBy oneOrMore(whitespace or letter) firstIn "      16344244 K total  memory").text
+    val found =
+      (letter followedBy oneOrMore(whitespace or letter) firstIn "      16344244 K total  memory").text
     found shouldBe "K total  memory"
   }
 
